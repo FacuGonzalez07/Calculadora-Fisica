@@ -1,4 +1,4 @@
-import matplotlib as mpl
+import matplotlib.pyplot as plt
 
 
 G = 9.8
@@ -39,7 +39,16 @@ def tiro_vertical():
         t = t/2
     else:print("\nIngrese una respuesta valida")
     print(f"\nLa altura maxima es de {hmax}m\nLa velocidad Inicial es de {v0}m/s2\nEl tiempo que tarda en llegar a la altura maxima {t}s\nEl tiempo que tarda en caer el objeto es de {t*2}s")
-    x = [t]
-    y = []
+
+    t = int((v0/G)*2)
+    h = lambda time : v0*time+(0.5*-abs(G))*time**2
+    x, y = [], []
+    for i in range(t+1):
+        x.append(i)
+        y.append(h(i))
+    x.append((v0/G)*2)
+    y.append(0)
+    plt.plot(x, y)
+    plt.show()
 
 main()
