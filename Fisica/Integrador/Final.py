@@ -79,6 +79,9 @@ def tiro_vertical():
         y.append(h(i))
     x.append((v0/G)*2)
     y.append(0)
+    plt.xlabel("Tiempo(s)")
+    plt.ylabel("Altira(m)")
+    plt.grid()
     plt.plot(x, y)
     plt.show()
 
